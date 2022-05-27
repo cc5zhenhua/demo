@@ -11,7 +11,7 @@ namespace ZEISSData
 {
     public class Program
     {
-        public static bool dbInitilized = false;
+        //public static bool dbInitilized = false; //sqliteDB need initialize schema
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();

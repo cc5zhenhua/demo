@@ -13,10 +13,11 @@ namespace ZEISSData.Controllers
 
         public MessageApi(IMessageBusinessObject messageBo) {
             this.messageBusinessObject = messageBo;
-            if (!Program.dbInitilized) {
-                messageBusinessObject.InitializeDbSchema();
-                Program.dbInitilized = true;
-            }
+            //this is for sqlite DB
+            //if (!Program.dbInitilized) {
+            //    messageBusinessObject.InitializeDbSchema();
+            //    Program.dbInitilized = true;
+            //}
         }
 
         [HttpGet("list")]

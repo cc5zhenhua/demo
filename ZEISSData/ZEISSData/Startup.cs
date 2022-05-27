@@ -30,9 +30,9 @@ namespace ZEISSData
         {
             services.AddControllers();
             services.AddSwaggerGen();
-            //services.AddDbContext<MachineLogMemoryDbContext>(opt=> opt.UseInMemoryDatabase(databaseName: "localDb"));
-            services.AddDbContext<MachineLogMemoryDbContext>(options =>
-                options.UseSqlite("Filename=./messages.db"));
+            services.AddDbContext<MachineLogMemoryDbContext>(opt=> opt.UseInMemoryDatabase(databaseName: "localDb"));
+            //services.AddDbContext<MachineLogMemoryDbContext>(options =>
+            //    options.UseSqlite("Filename=./messages.db"));
             
             services.AddScoped<IRepository, ZEISSData.Repository.Repository>();
             services.AddScoped<IMessageBusinessObject, MessageBusinessObject>();

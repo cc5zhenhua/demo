@@ -50,11 +50,12 @@ namespace ZEISSData.Services
                         using (IServiceScope scope = provider.CreateScope())
                         {                         
                             var messageBo = scope.ServiceProvider.GetService<IMessageBusinessObject>();
-                            if (!Program.dbInitilized)
-                            {
-                                messageBo.InitializeDbSchema();
-                                Program.dbInitilized = true;
-                            }
+                            //this is for sqlite DB
+                            //if (!Program.dbInitilized)
+                            //{
+                            //    messageBo.InitializeDbSchema();
+                            //    Program.dbInitilized = true;
+                            //}
                             var model = JsonConvert.DeserializeObject<MessageModel>(messageText);
                             messageBo.TransferMessage(model);
                             data = new List<byte>();
